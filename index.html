@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        .jumbotron{
+            background-image: url("https://www.flyfrontier.com/umbraco/api/externalcontent/getdestinationimageurl/?version=1&stationcode=Img_countries_usa");
+            background-size:cover;
+            background-position: center;
+            
+        }
+        p{
+        font-size: 18px;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="jumbotron" style="text-align: center">
+        <h1 style="color: aliceblue;text-shadow:black 0.1em 0.1em 0.1em;">Welcome to the Newsroom!</h1>
+        <p>What's shaping our lives?</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-md-offset-0">
+                <h1>A Correlation Between Households in Poverty and Smoking?</h1>
+                <p>In this Data Driver Document(D3), We explore certain associations between demographic and behavioral risk factors using survey data collected from the U.S Census Bureau's American Community Survey(ACS) 
+                        and the Behavioral Risk Factor Surveillance System(BRFSS) during the year of 2014. Each marker represents an individual state in United States.</p>
+                <hr>
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col-xs-12  col-md-9 col-md-offset-0">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src = "d3.html"></iframe>
+                </div> 
+            </div>
+        </div>
+        <div class="row">
+            <hr>
+            <p>There seems to be a correlation between the percentage of household income and smoking. As the percentage in poverty increases, more active smokers. It is interesting to see how the state of Puerto Rico is getting clustered-out from the inland states in North America.</p>
+            <a href="https://github.com/weekysui/data_journal">Explore the d3.js code</a>
+        </div>
+    </div>    
+   
+    
+</body>
+</html>

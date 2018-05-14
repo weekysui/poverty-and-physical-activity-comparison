@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <style>
+        .d3-tip{
+        line-height: 1;
+        font-weight: bold;
+        padding: 8px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        text-align: center;
+        font-size:8pt;
+        }
+        /* Creates a small triangle extender for the tooltip */
+        .d3-tip:after {
+        box-sizing: border-box;
+        display: inline;
+        font-size: 10px;
+        width: 100%;  /*the text box triangle will be in the middle */
+        line-height: 1;
+        color: rgba(0, 0, 0, 0.8);
+        content: "\25BC";
+        position: absolute;
+        text-align: center;
+        }
+        /* Style northward tooltips differently */
+        .d3-tip.n:after {
+        margin: -1px 0 0 0;
+        top: 100%;
+        left: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <div id = "svg">
+        <svg>
+
+        </svg>
+    </div>
+    <script src="index.js"></script>
+    
+</body>
+</html>
