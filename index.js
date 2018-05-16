@@ -35,15 +35,16 @@ d3.csv("data.csv",function(error,data){
     var abbr = data.map(d=>d.abbr);
     // format data number
     data.forEach(d=>{
-        d.pverty = +d.pverty,
+        d.poverty = +d.poverty,
         d.smoke= +d.smoke,
+        d.activity = +d.physicalActivity,
         d.abbr=d.abbr
     });
     console.log(abbr)
     
     // find min and max of data (since we are makeing bubble chart, radius is 15, if we use d3.extent, some data will fall right on axes.)
-    var minPoverty = d3.min(data,d=>d.pverty)
-    var maxPoverty = d3.max(data,d=>d.pverty)
+    var minPoverty = d3.min(data,d=>d.poverty)
+    var maxPoverty = d3.max(data,d=>d.poverty)
     var minSmoke = d3.min(data,d=>d.smoke)
     var maxSmoke = d3.max(data,d=>d.smoke)
     // create xscale for the chart (scaleLinear)
@@ -68,7 +69,7 @@ d3.csv("data.csv",function(error,data){
         .data(data)
         .enter()
         .append("circle")
-        .attr("cx",d=>xScale(d.pverty))
+        .attr("cx",d=>xScale(d.poverty))
         .attr("cy",d=>yScale(d.smoke))
         .attr('r','15')
         .attr("fill","SteelBlue")
@@ -90,7 +91,7 @@ d3.csv("data.csv",function(error,data){
         .attr("class","d3-tip")
         .offset([-10,0])
         .html(function(data){
-            return `<p>${data.state}</p><hr><p>Poverty: ${data.pverty}</p><p>Smoke: ${data.smoke}</p>`
+            return `<p>${data.state}</p><hr><p>Poverty: ${data.poverty}</p><p>Smoke: ${data.smoke}</p>`
         })
     circlesGroup.call(toolTip);
     // add text on data points
@@ -99,7 +100,7 @@ d3.csv("data.csv",function(error,data){
         .enter()
         .append("text")
         .attr('class','state')
-        .attr("x",d=>xScale(d.pverty))
+        .attr("x",d=>xScale(d.poverty))
         .attr("y",d=>yScale(d.smoke))
         .text(d=>d.abbr)
         .attr("font-size", "12px")
