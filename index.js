@@ -51,10 +51,10 @@ function makeResponsive(){
         // define xScale's min and max
         function createXscale(columnName){
             xMin = d3.min(data,d=>{
-                return d[columnName]-3   //can't use dotnotation here
+                return d[columnName]*0.8   //can't use dotnotation here
             });
             xMax = d3.max(data,d=>{
-                return d[columnName]+3
+                return d[columnName]*1.2
             });
             // console.log(xMin,xMax)
         }
@@ -67,10 +67,10 @@ function makeResponsive(){
         //define yScale min and max
         function createYscale(columnName){
             yMin = d3.min(data,d=>{
-                return d[columnName] -3     //can't use dotnotation here
+                return d[columnName] *0.8     //can't use dotnotation here
             });
             yMax = d3.max(data,d=>{
-                return d[columnName]+3
+                return d[columnName]*1.2
             });
             // console.log(yMin,yMax)
         }
@@ -111,7 +111,7 @@ function makeResponsive(){
             .attr("text-anchor","middle")
             .attr("transform",`translate(-39,${chartHeight /2})rotate(-90)`)
             .attr("font-weight","bolder")
-            .text("Physical Activity (%)");
+            .text("Physically Active (%)");
         // add xAxis label
         chartGroup.append("text")
             .attr("text-anchor","middle")
@@ -123,7 +123,7 @@ function makeResponsive(){
             .attr("class","d3-tip")
             .offset([-10,0])
             .html(function(data){
-                return `<p>${data.state}</p><hr><p>Poverty: ${data[xColumn]}</p><p>Physical Activity: ${data[yColumn]}</p>`
+                return `<p>${data.state}</p><hr><p>Poverty: ${data[xColumn]}</p><p>Physically Active: ${data[yColumn]}</p>`
             })
         circlesGroup.call(toolTip);
         // add text on data points
@@ -137,7 +137,6 @@ function makeResponsive(){
             .text(d=>d.abbr)
             .attr("font-size", "12px")
             .attr("text-anchor", "middle")
-            .attr("class","stateText")
             .attr("fill","white")
             .attr('opacity',0.75)
             .on("mouseover",toolTip.show)  //mouseover event
