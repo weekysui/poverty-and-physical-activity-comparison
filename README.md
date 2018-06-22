@@ -5,5 +5,5 @@
 
 Let's take a look of the bubble chart! 
 <img src = "graph-plot.png">
-You can explore more here: https://weekysui.github.io/data_journal/
+You can explore more here: https://weekysui.github.io/poverty-and-physical-activity-comparison/
 
